@@ -1,4 +1,4 @@
-import requester from "./requester";
+import requester from "../requester";
 
 export default async (user) => {
     const result = await requester.get(`/users/${user}`);

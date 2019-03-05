@@ -2,6 +2,6 @@ import React from 'react'
 
 export default () => {
     return (
-        <span>No data</span>
+        <tr><td>No data</td></tr>
     )
 }

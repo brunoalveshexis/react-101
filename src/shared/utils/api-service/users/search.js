@@ -1,4 +1,4 @@
-import requester from './requester'
+import requester from '../requester'
 
 export default async (query) => {
     const result = await requester.get(`/search/users?q=${query}`);

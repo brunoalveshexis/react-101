@@ -1,27 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux'
+import configureStore from './shared/state/configureStore'
+import Input from './shared/components/Input'
+import Button from './shared/components/Button'
+import UsersList from './shared/components/UsersList';
 
-class App extends Component {
+
+export default class App extends Component {
+  store = configureStore();
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+      <Provider store={this.store}>
+        <Input placeholder="user id without @" />
+        <Button text="Search" />
+        <br /> 
+        <UsersList />
+      </Provider>
+    )
+  };
 }
-
-export default App;

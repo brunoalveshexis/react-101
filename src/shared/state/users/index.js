@@ -1,3 +1,7 @@
+import usersReducer from "./reducer";
+import { usersRefresh } from "./action";
 
-
-// Export actions, reducer e 
+export default {
+    usersReducer: usersReducer,
+    actions: usersRefresh,
+};
